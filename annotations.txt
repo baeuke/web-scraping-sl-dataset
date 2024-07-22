@@ -1,0 +1,28 @@
+Page 7:
+HamNoSys: 
+Palm orientation class: 4
+
+Page 8:
+HamNoSys: 
+Palm orientation class: 6
+
+Page 9:
+HamNoSys: 
+Palm orientation class: 6
+
+Page 11:
+HamNoSys: no HamNoSys
+Palm orientation class: None
+
+Page 12:
+HamNoSys: 
+Palm orientation class: 6
+
+Page 11:
+HamNoSys: no HamNoSys
+Palm orientation class: None
+
+Page 12:
+HamNoSys: 
+Palm orientation class: 6
+

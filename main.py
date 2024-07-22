@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 import requests
-# import unicodedata
 
 def is_palm_orientation_class(char):
     if '\uE038' <= char <= '\uE03F': # E038 is unicode char
@@ -16,15 +15,8 @@ def is_palm_orientation_class(char):
 with open('annotations.txt', 'a') as f:
     for i in range(11, 13):
         url = f'https://www.slownikpjm.uw.edu.pl/en/gloss/view/{i}'
-
-    # page = requests.get(url).text
         page = requests.get(url)
-
         soup = BeautifulSoup(page.content, 'lxml')
-
-    # hamanns = soup.find('span', class_='videocontent_main_hamnosyseditor').text
-    # formatted = unicodedata.normalize('NFKD', hamanns).encode('ascii', 'ignore').decode('utf-8')
-    # print(hamanns)
 
         video = soup.find('video', {'id': 'gloss_view_video'})
         if video:
@@ -40,14 +32,11 @@ with open('annotations.txt', 'a') as f:
         else:
             hamnosys = 'no HamNoSys'
 
-        # palm_orientation_class = ''
         for char in hamnosys:
             palm_orientation_class = is_palm_orientation_class(char)
             if palm_orientation_class is not None:
                 break
-            # if is_palm_orientation_class(char):
-            #     palm_orientation_class = char
-            #     break
+
 
         print(f'Page {i}:')
         print('Video:', video)

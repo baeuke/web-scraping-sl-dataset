@@ -32,6 +32,7 @@ with open('annotations.txt', 'a') as f:
         else:
             hamnosys = 'no HamNoSys'
 
+        palm_orientation_class = None
         for char in hamnosys:
             palm_orientation_class = is_palm_orientation_class(char)
             if palm_orientation_class is not None:
@@ -52,7 +53,10 @@ with open('annotations.txt', 'a') as f:
         # downloading the video:
         if video != 'no video':
             r = requests.get(video, stream=True)
-            video_path = f'videos/video_{i}.mp4'
+            if palm_orientation_class is not None:
+                video_path = f'videos/video_{i}_{palm_orientation_class}.mp4'
+            else:
+                video_path = f'videos/video_{i}.mp4'
             with open(video_path, 'wb') as vf:
                 for chunk in r.iter_content(chunk_size=1024):
                     if chunk:

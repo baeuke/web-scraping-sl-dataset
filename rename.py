@@ -1,4 +1,6 @@
 '''
+! Not relevant anymore: the main.py now names in the correct format when downloading the videos.
+
 File for renaming the videos to include palm orientation class (for easier distribution of the frame images into class directories).
 '''
 
